@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Circular logo */
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Title */
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Container for flowboxes */
+        .container {
+            display: flex;
+            width: 600px;
+            height: 300px;
+        }
+
+        /* Flowbox 1 (left side) */
+        .flowbox1 {
+            width: 50%;
+            background-color: rgb(106, 203, 239);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        /* Right side container for flowbox2 and flowbox3 */
+        .right-container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Flowbox 2 (top right) */
+        .flowbox2 {
+            height: 50%;
+            background-color: rgb(70, 231, 99);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        /* Flowbox 3 (bottom right) */
+        .flowbox3 {
+            height: 50%;
+            background-color: rgb(255, 201, 233);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Circular logo with an image -->
+    <div class="logo">
+        <img src="leaf.png" alt="Logo">
+    </div>
+
+    <!-- Title -->
+    <div class="title">TITLE</div>
+
+    <!-- Flowboxes container -->
+    <div class="container">
+        <!-- Flowbox 1 (left) -->
+        <div class="flowbox1">flowbox1</div>
+
+        <!-- Right container for flowbox2 and flowbox3 -->
+        <div class="right-container">
+            <!-- Flowbox 2 (top right) -->
+            <div class="flowbox2">flowbox2</div>
+            <!-- Flowbox 3 (bottom right) -->
+            <div class="flowbox3">flowbox3</div>
+        </div>
+    </div>
+</body>
+
+</html>

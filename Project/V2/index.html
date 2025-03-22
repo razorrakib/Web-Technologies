@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        
+        .container {
+            display: flex;
+            width: 700px;
+            height: 1600px;
+        }
+
+       
+        .flowbox1 {
+            width: 50%;
+            background-color: rgb(137, 237, 250);
+            display: auto;
+            justify-content: center;
+            align-items: top;
+            font-size: 18px;
+        }
+
+       
+        .right-container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+        .flowbox2 {
+            height: 50%;
+            background-color: rgb(196, 217, 225);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+
+       
+        .flowbox3 {
+            height: 50%;
+            background-color: rgb(202, 176, 176);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+
+
+        /* Dropdown Button */
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: native;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+    </style>
+</head>
+
+<body>
+    <!-- Circular logo with an image -->
+    <div class="logo">
+        <img src="leaf.png" alt="Logo">
+    </div>
+
+    <!-- Title -->
+    <div class="title">TITLE</div>
+
+    <!-- Flowboxes container -->
+    <div class="container">
+        <!-- Flowbox 1 (left) -->
+        <div class="flowbox1">
+            <h3>Html Form</h3>
+            <br>
+            <br>
+
+            <form>
+                <label for="fname">Full Name:</label>
+                <input type="text" id="fname" name="fname"><br>
+                <br>
+
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" name="email"><br>
+                <br>
+
+                <label for="password">Password:</label>
+                <input type="text" id="password" name="password"><br>
+                <br>
+
+                <label for="cpass">Confirm Pass:</label>
+                <input type="text" id="cpass" name="cpass"><br>
+              </form><br>
+
+
+
+              <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday"><br><br>
+
+
+                <div class="dropdown">
+                    <label for="dropdown">Choose Country:</label>
+
+                    <button class="dropbtn">Choose - </button>
+                    <div class="dropdown-content">
+                      <a href="#">Bangladesh</a>
+                      <a href="#">Saudi Arabia</a>
+                      <a href="#">Australia</a>
+                      <a href="#">South Africa</a>
+                      <a href="#">China</a>
+                    </div>
+                  </div> <br><br>
+
+                    <label>Choose Gender</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br><br>
+
+
+
+                    <label>Choose color</label><br><br>
+
+
+
+                    <label for="opinion">Comment your opinion:</label>
+                    <textarea id="opinion" name="opinion" rows="5" cols="44">
+                    </textarea><br><br>
+
+
+                    <label>I agree with the terms and conditions</label>
+                    <input type="checkbox" id="terms" name="terms" value="Boat">
+                    
+              
+
+
+
+
+
+
+
+        </div>
+
+        <!-- Right container for flowbox2 and flowbox3 -->
+        <div class="right-container">
+            <!-- Flowbox 2 (top right) -->
+            <div class="flowbox2">flowbox2</div>
+            <!-- Flowbox 3 (bottom right) -->
+            <div class="flowbox3">flowbox3</div>
+        </div>
+    </div>
+</body>
+
+</html>
