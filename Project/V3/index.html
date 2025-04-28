@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+
+        .container {
+            display: flex;
+            width: 1000px;
+            height: 1600px;
+        }
+
+
+        .flowbox1 {
+            width: 50%;
+            background-color: rgb(33, 229, 255);
+            display: auto;
+            justify-content: center;
+            align-items: top;
+            font-size: 18px;
+            padding: 15px;
+            font-weight: normal;
+        }
+
+
+        .right-container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .flowbox2 {
+            height: 50%;
+            background-color: rgb(159, 254, 254);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+
+
+        .flowbox3 {
+            height: 50%;
+            background-color: rgb(217, 246, 251);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src="leaf.png" alt="Logo">
+    </div>
+
+
+    <div class="title">Air Quality Index</div>
+
+    <div class="container">
+
+        <div class="flowbox1">
+            <h3>Signup Form</h3>
+            <h5 id="message"></h5>
+            <br>
+            <br>
+
+            <form>
+                <label for="fname">Full Name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <br>
+
+                <label for="email">E-mail:</label><br>
+                <input type="text" id="email" name="email"><br>
+                <br>
+
+                <label for="password">Password:</label><br>
+                <input type="text" id="password" name="password"><br>
+                <br>
+
+                <label for="cpass">Confirm Password:</label><br>
+                <input type="text" id="cpass" name="cpass"><br><br>
+
+
+
+
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday"><br>
+
+
+
+
+                <div class="dropdown"><br>
+                    <label for="dropdown">Choose Country:</label>
+
+
+                    <select id="Country" name="Country">
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Australia">Australia</option>
+                        <option value="China">China</option>
+                        <option value="South Africa">South Africa</option>
+                    </select>
+
+                </div> <br>
+
+                <label>Choose Gender</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br><br>
+
+
+
+                <label>Choose Your Favourite Color</label>
+                <input type="color" id="favcolor" name="favcolor" value="#ff0000"> <br> <br>
+
+
+
+
+                <label for="opinion">Comment your opinion:</label>
+                <textarea id="opinion" name="opinion" rows="5" cols="44">
+                    </textarea><br><br>
+
+
+                <label>I agree with the terms and conditions</label>
+                <input type="checkbox" id="terms" name="terms">
+            </form><br>
+
+            <br> <br>
+            </select>
+            <input type="submit">
+
+
+
+
+
+
+        </div>
+
+        <!-- Right container for flowbox2 and flowbox3 -->
+        <div class="right-container">
+            <!-- Flowbox 2 (top right) -->
+            <div class="flowbox2">flowbox2</div>
+            <!-- Flowbox 3 (bottom right) -->
+            <div class="flowbox3">flowbox3</div>
+        </div>
+    </div>
+    <script>
+        document.querySelector("input[type='submit']").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent form submission
+            const message = document.getElementById("message");
+            const fullName = document.getElementById("fname").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("cpass").value;
+            const birthDate = document.getElementById("birthday").value;
+            const gender = document.querySelector("input[name='gender']:checked");
+            const terms = document.getElementById("terms").checked;
+
+            // Reset message style
+            message.style.color = "red";
+
+            // Fullname validation
+            if (!fullName) {
+                alert("Fullname must not be empty");
+                message.textContent = "Fullname must not be empty";
+                return;
+            }
+
+            // Email validation
+            const emailPattern = /^\d{2}-\d{5}-\d@student\.aiub\.edu$/;
+            if (!emailPattern.test(email)) {
+                alert("Email must follow the format '22-12345-3@student.aiub.edu'");
+                message.textContent = "Email must follow the format '22-12345-3@student.aiub.edu'";
+                return;
+            }
+
+            // Password validation
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[a-zA-Z]).{8,}$/;
+            if (!passwordPattern.test(password)) {
+                alert("Password must be at least 8 characters long, containing at least 1 uppercase, 1 lowercase, 1 number, and 1 letter.");
+                message.textContent = "Password must be at least 8 characters long, containing at least 1 uppercase, 1 lowercase, 1 number, and 1 letter.";
+                return;
+            }
+
+            // Confirm Password validation
+            if (password !== confirmPassword) {
+                alert("Password and Confirm Password must match.");
+                message.textContent = "Password and Confirm Password must match.";
+                return;
+            }
+
+            // Birthdate validation
+            if (!birthDate) {
+                alert("Birthdate must be selected.");
+                message.textContent = "Birthdate must be selected.";
+                return;
+            }
+            const birthDateObj = new Date(birthDate);
+            const today = new Date();
+            const age = today.getFullYear() - birthDateObj.getFullYear();
+            const isBirthdayPast = (today.getMonth() > birthDateObj.getMonth() ||
+                (today.getMonth() === birthDateObj.getMonth() && today.getDate() >= birthDateObj.getDate()));
+            if (age < 18 || (age === 18 && !isBirthdayPast)) {
+                alert("Age must be at least 18 years old.");
+                message.textContent = "Age must be at least 18 years old.";
+                return;
+            }
+
+            // Gender validation
+            if (!gender) {
+                alert("Gender must be selected.");
+                message.textContent = "Gender must be selected.";
+                return;
+            }
+
+            // Terms and Conditions validation
+            if (!terms) {
+                alert("You must agree to the terms and conditions.");
+                message.textContent = "You must agree to the terms and conditions.";
+                return;
+            }
+
+            // If all validations pass
+            alert("SIGNUP SUCCESSFUL!");
+            message.style.color = "green"; // Set the success message color to green
+            message.textContent = "Signup successful!";
+        });
+    </script>
+</body>
+
+</html>
